@@ -1,0 +1,27 @@
+/*Mobile*/
+.sleeve{
+    height:200px;
+    width:100%;
+    margin:5px;
+}
+
+p.card{
+    font-size: 100px;
+    display: inline-block;
+    margin: 0px;
+}
+
+
+/*Desktop*/
+@media only screen and (min-width:600px){
+
+    .sleeve{
+        height: 200px;
+        width: 90%
+    }
+
+    p.card{
+        font-size: 100px;
+    }
+
+}
