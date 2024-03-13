@@ -1,6 +1,6 @@
-/*Mobile*/
+
 .sleeve{
-    height:200px;
+    height:100px;
     width:100%;
     margin:5px;
 }
@@ -9,6 +9,13 @@ p.card{
     font-size: 100px;
     display: inline-block;
     margin: 0px;
+    line-height: 100px; /*Used to remove extra spacing above and below the cards*/
+    height: 96px;
+}
+
+p.card:hover{
+    color:aqua;
+    cursor: none;
 }
 
 
