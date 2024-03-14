@@ -25,7 +25,7 @@ window.onload = () => {
 
         var card_data = {
             card: suits[y][x],
-            classes: (y == 1 || y == 2) ? classes += " card-red":"",
+            classes: (y == 1 || y == 2) ? classes += " card-red": classes="card",
         }
 
         return card_data;

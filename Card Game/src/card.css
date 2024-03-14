@@ -16,7 +16,21 @@
 
 h1.header-content,button.menu-settings{
     font-size: var(--header-size);
-    height: var(--header-size);
+}
+
+.medium-container{
+    display: flex;
+}
+
+.header-medium{
+    font-size: calc(var(--header-size)/1.4);
+}
+
+.toggle-content{
+    margin-left: 10vw;
+    height: 50%;
+    align-self: center;
+    font-size: calc(var(--header-size)/2.5);
 }
 
 .header-menu{
@@ -36,20 +50,28 @@ h1.header-content,button.menu-settings{
 }
 
 .sleeve{
+    counter-reset: cardCounter;
     display: flex;
     flex-flow: row wrap;
-    height: calc(var(--card-height) * var(--card-rows));
     width:100%;
     margin:5px;
     margin-bottom: calc(var(--card-margin) * var(--card-rows));
 }
 
 .card{
+    counter-increment: cardCounter;
+}
+
+.card,.random-container{
     font-size: var(--card-size);
     margin: 0px;
     line-height: var(--card-line-height); /*Used to remove extra spacing above and below the cards*/
     height: var(--card-height);
     margin-bottom: var(--card-margin);
+}
+
+#random-card{
+    margin: 0px;
 }
 
 .card-red{
