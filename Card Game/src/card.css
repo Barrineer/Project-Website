@@ -1,34 +1,92 @@
 
+:root{
+    --header-size: 10vw;
+    --card-size: 35vw;
+    --card-margin: 5vw;
+    --card-rows: 4;
+    --menu-line-height: calc(var(--header-size) * 0.95);
+    --card-line-height: calc(var(--card-size) * 0.95);
+    --card-height: calc(var(--card-size) * 0.93);
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+h1.header-content,button.menu-settings{
+    font-size: var(--header-size);
+    height: var(--header-size);
+}
+
+.header-menu{
+    list-style-type:none;
+    display: flex;
+    align-items: center;
+}
+
+.menu-settings{
+    padding: 0px;
+    border: 0px;
+    background-color: white;
+    font-size: var(--header-size);
+    line-height: var(--menu-line-height);
+    padding: 0px;
+    padding-top: 2px;
+}
+
 .sleeve{
-    height:100px;
+    display: flex;
+    flex-flow: row wrap;
+    height: calc(var(--card-height) * var(--card-rows));
     width:100%;
     margin:5px;
+    margin-bottom: calc(var(--card-margin) * var(--card-rows));
 }
 
-p.card{
-    font-size: 100px;
-    display: inline-block;
+.card{
+    font-size: var(--card-size);
     margin: 0px;
-    line-height: 100px; /*Used to remove extra spacing above and below the cards*/
-    height: 96px;
+    line-height: var(--card-line-height); /*Used to remove extra spacing above and below the cards*/
+    height: var(--card-height);
+    margin-bottom: var(--card-margin);
 }
 
-p.card:hover{
-    color:aqua;
-    cursor: none;
+.card-red{
+    color:red;
 }
 
+.card:hover{
+    color:blue;
+    cursor:grab;
+}
+/*Color blindness tips
+-   DO NOT use red and green together simultaneously
+-   Red and Blue, Orange and Blue, and even Brown and Blue work very well together
+-   Another less common one is blue-yellow. Do not use: blue/green, yellow/red, purple/red, yellow/pink simultaneously near each other
+*/
 
-/*Desktop*/
-@media only screen and (min-width:600px){
+#draw-card{
+    margin-bottom: 3vw;
+}
 
-    .sleeve{
-        height: 200px;
-        width: 90%
+@media screen and (min-width:700px){
+    :root{
+        --header-size: 5vw;
+        --card-size: 20vw;
+        --card-rows: 2;
     }
+}
 
-    p.card{
-        font-size: 100px;
+@media screen and (min-width:1000px){
+    :root{
+        --card-size: 15vw;
+        --card-rows: 2;
     }
+}
 
+@media screen and (max-width:193px){
+    :root{
+        --card-rows: 5;
+    }
 }
