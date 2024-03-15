@@ -18,28 +18,17 @@
         </header>
         <main>
             <div class="medium-container">
-                <h4 class="header-medium">Spades</h4>
+                <h4 class="header-medium">Hand</h4>
                 <!--
                     Slight bug (probably HTML issue dunno if can fix) the click box for each card is slighly larger on the top and bottom.
                     Fixed how large it was by reducing the line-height property in css but there is still a slight amount.
                 -->
-                <button class="toggle-content">Toggle Visibility</button>
+                <button id="draw-multiple" class="toggle-content">Draw 7</button>
+                <button id="draw-singular" class="toggle-content">Draw 1</button>
+                <button id="deck-new" class="toggle-content">New Deck</button>
             </div>
-            <div class="sleeve spades">
-                <p class="card">&#127136</p>
-                <p class="card">&#127137</p>
-                <p class="card card-red">&#127138</p>
-                <p class="card">&#127139</p>
-                <p class="card">&#127140</p>
-                <p class="card">&#127141</p>
-                <p class="card">&#127142</p>
-                <p class="card">&#127143</p>
-                <p class="card">&#127144</p>
-                <p class="card">&#127145</p>
-                <p class="card">&#127146</p>
-                <p class="card">&#127147</p>
-                <p class="card">&#127149</p>
-                <p class="card">&#127150</p>
+            <div id="hand" class="sleeve spades">
+                
             </div>
             <h4>Randomize Card</h4>
             <button id="draw-card">Draw Card</button>
