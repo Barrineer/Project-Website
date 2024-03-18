@@ -91,16 +91,6 @@ window.onload = () => {
 
     /* HTML Linking */
 
-    var draw_button = document.getElementById("draw-card");
-    var rand_card = document.getElementById("random-card");
-
-    draw_button.onclick = () =>{
-        var card_data = draw_random();
-        console.log(`You drew a card`);
-        rand_card.innerHTML = `&#${card_data.card}`;
-        rand_card.className = card_data.classes;
-    }
-
     var deck = createDeck();
     var hand = document.getElementById("hand");
     var draw_multiple = document.getElementById("draw-multiple");

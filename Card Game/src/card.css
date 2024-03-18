@@ -4,6 +4,7 @@
     --card-size: 35vw;
     --card-margin: 5vw;
     --card-rows: 4;
+    --z-index: 0;
     --menu-line-height: calc(var(--header-size) * 0.95);
     --card-line-height: calc(var(--card-size) * 0.95);
     --card-height: calc(var(--card-size) * 0.93);
@@ -11,13 +12,13 @@
 
 /*Animation Code*/
 
-@keyframes gear {
-    0%      {color: rgba(0,0,0,0.9);}
-    25%     {color: rgba(0,0,0,0.8);}
-    50%     {color: rgba(0,0,0,0.7);}
-    75%     {color: rgba(0,0,0,0.6);}
-    100%    {color: rgba(0,0,0,0.5);}
-}
+    @keyframes gear {
+        0%      {color: rgba(0,0,0,0.9);}
+        25%     {color: rgba(0,0,0,0.8);}
+        50%     {color: rgba(0,0,0,0.7);}
+        75%     {color: rgba(0,0,0,0.6);}
+        100%    {color: rgba(0,0,0,0.5);}
+    }
 
 /*END Animation Code*/
 
@@ -115,6 +116,53 @@ h1.header-content,button.menu-settings{
 #draw-card{
     margin-bottom: 3vw;
 }
+
+/*Modal Code*/
+
+    .modal{
+
+    }
+
+/*END Modal Code*/
+
+/*Overlap Card*/
+
+    /*Figure out a way to have each subsequent cards' z-index go up by 1*/
+    /*Use the counter functionality*/
+    .sleeve-overlap{
+
+    }
+
+    .card-overlap{
+        margin-left: -50px;
+        z-index: 2;
+        background-color: white;
+    }
+
+/*END Overlap Card*/
+
+/*Testing Counter*/
+
+    .counter-container{
+        counter-reset: z;
+    }
+
+    .counter-container > p::before{
+        counter-increment: z;
+        content: counter(z);
+    }
+
+    .counter-container > p{
+        --z-index: calc(var(--z-index)+1);
+        z-index: var(--z-index);
+    }
+
+    .counter-container::after{
+        margin-bottom: 5px;
+        content: "hello" var(--z-index);
+    }
+
+/*END Testing Counter*/
 
 @media screen and (min-width:700px){
     :root{
