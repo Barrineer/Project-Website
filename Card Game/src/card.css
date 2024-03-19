@@ -1,14 +1,49 @@
+/*Color blindness tips
+-   DO NOT use red and green together simultaneously
+-   Red and Blue, Orange and Blue, and even Brown and Blue work very well together
+-   Another less common one is blue-yellow. Do not use: blue/green, yellow/red, purple/red, yellow/pink simultaneously near each other
+*/
 
-:root{
-    --header-size: 10vw;
-    --card-size: 35vw;
-    --card-margin: 5vw;
-    --card-rows: 4;
-    --z-index: 0;
-    --menu-line-height: calc(var(--header-size) * 0.95);
-    --card-line-height: calc(var(--card-size) * 0.95);
-    --card-height: calc(var(--card-size) * 0.93);
-}
+/*Variables*/
+    :root{
+        --header-size: 10vw;
+        --card-size: 35vw;
+        --card-margin: 5vw;
+        --card-rows: 4;
+        --modal-container-width:75vw;
+        --modal-container-height:75vh;
+        --modal-close-size: 7vw;
+        --z-index: 0;
+        --menu-line-height: calc(var(--header-size) * 0.95);
+        --card-line-height: calc(var(--card-size) * 0.95);
+        --card-height: calc(var(--card-size) * 0.93);
+    }
+
+    @media screen and (min-width:700px){
+        :root{
+            --header-size: 5vw;
+            --card-size: 20vw;
+            --card-rows: 2;
+            --modal-close-size:4vw;
+        }
+    }
+
+    @media screen and (min-width:1000px){
+        :root{
+            --header-size: 3vw;
+            --card-size: 10vw;
+            --card-rows: 1;
+            --modal-close-size:2vw;
+        }
+    }
+
+    @media screen and (max-width:193px){
+        :root{
+            --card-rows: 5;
+        }
+    }
+
+/*END Variables*/
 
 /*Animation Code*/
 
@@ -22,125 +57,69 @@
 
 /*END Animation Code*/
 
-.header-container{
-    display: flex;
-    justify-content: space-between;
-}
-
-h1.header-content,button#settings-open{
-    font-size: var(--header-size);
-}
-
-.medium-container{
-    display: flex;
-}
-
-.header-medium{
-    font-size: calc(var(--header-size)/1.4);
-}
-
-.toggle-content{
-    margin-left: 10vw;
-    height: 50%;
-    align-self: center;
-    font-size: calc(var(--header-size)/2.5);
-}
-
-.header-menu{
-    padding: 0;
-    list-style-type:none;
-    display: flex;
-    align-items: center;
-    margin-right: 1vw;
-}
-
-#settings-open{
-    padding: 0px;
-    border: 0px;
-    background-color: white;
-    font-size: var(--header-size);
-    line-height: var(--menu-line-height);
-    padding: 0px;
-    padding-top: 2px;
-    transition: transform 0.5s;
-}
-
-.sleeve{
-    counter-reset: cardCounter;
-    display: flex;
-    flex-flow: row wrap;
-    width:100%;
-    margin:5px;
-    margin-bottom: calc(var(--card-margin) * var(--card-rows));
-}
-
-.card{
-    counter-increment: cardCounter;
-}
-
-.card,.random-container{
-    font-size: var(--card-size);
-    margin: 0px;
-    line-height: var(--card-line-height); /*Used to remove extra spacing above and below the cards*/
-    height: var(--card-height);
-    margin-bottom: var(--card-margin);
-}
-
-#random-card{
-    margin: 0px;
-}
-
-.card-red{
-    color:red;
-}
-
-.card:hover{
-    color:blue;
-    cursor:grab;
-}
-
-#settings-open:hover{
-    cursor: pointer;
-    animation-name: gear;
-    animation-duration: 0.5s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    transform: rotate(60deg);
-}
-
-/*Color blindness tips
--   DO NOT use red and green together simultaneously
--   Red and Blue, Orange and Blue, and even Brown and Blue work very well together
--   Another less common one is blue-yellow. Do not use: blue/green, yellow/red, purple/red, yellow/pink simultaneously near each other
-*/
-
-#draw-card{
-    margin-bottom: 3vw;
-}
-
-/*Modal Code*/
-
-    ::backdrop{
-        background-color: rgba(0,0,0,0.75);
+/*Header Style*/
+    .header-container{
+        display: flex;
+        justify-content: space-between;
     }
 
-    #settings-dialog{
-        width: 75vw;
-        height: 75vh;
+    h1.header-content,button#settings-open{
+        font-size: var(--header-size);
     }
 
-    #settings-close{
-        font-size: 7.5vw;
+    .header-medium{
+        font-size: calc(var(--header-size)/1.4);
     }
 
-/*END Modal Code*/
+    .header-menu{
+        padding: 0;
+        list-style-type:none;
+        display: flex;
+        align-items: center;
+        margin-right: 1vw;
+    }
+/*END Header Style*/
 
-/*Overlap Card*/
+/*Card Styling*/
+    .medium-container{
+        display: flex;
+    }
 
-    /*Figure out a way to have each subsequent cards' z-index go up by 1*/
-    /*Use the counter functionality Update: Counter will not work.*/
-    .sleeve-overlap{
+    .card-btn{
+        margin-left: 10vw;
+        height: 50%;
+        align-self: center;
+        font-size: calc(var(--header-size)/2.5);
+    }
 
+    .sleeve{
+        counter-reset: cardCounter;
+        display: flex;
+        flex-flow: row wrap;
+        width:100%;
+        margin:5px;
+        margin-bottom: calc(var(--card-margin) * var(--card-rows));
+    }
+
+    .card,.random-container{
+        font-size: var(--card-size);
+        margin: 0px;
+        line-height: var(--card-line-height); /*Used to remove extra spacing above and below the cards*/
+        height: var(--card-height);
+        margin-bottom: var(--card-margin);
+    }
+    
+    #random-card{
+        margin: 0px;
+    }
+    
+    .card-red{
+        color:red;
+    }
+    
+    .card:hover{
+        color:blue;
+        cursor:grab;
     }
 
     .card-overlap{
@@ -149,49 +128,41 @@ h1.header-content,button#settings-open{
         background-color: white;
     }
 
-/*END Overlap Card*/
+/*END Card Styling*/
 
-/*Testing Counter*/
+/*Modal Code*/
 
-    .counter-container{
-        counter-reset: z;
+    ::backdrop{
+        background-color: rgba(0,0,0,0.75);
     }
 
-    .counter-container > p::before{
-        counter-increment: z;
-        content: counter(z);
+    #settings-dialog{
+        width: var(--modal-container-width);
+        height: var(--modal-container-height);
     }
 
-    .counter-container > p{
-        --z-index: calc(var(--z-index)+1);
-        z-index: var(--z-index);
+    #settings-close{
+        font-size: var(--modal-close-size);
     }
 
-    .counter-container::after{
-        margin-bottom: 5px;
-        content: "hello" var(--z-index);
+    #settings-open{
+        padding: 0px;
+        border: 0px;
+        background-color: white;
+        font-size: var(--header-size);
+        line-height: var(--menu-line-height);
+        padding: 0px;
+        padding-top: 2px;
+        transition: transform 0.5s;
     }
 
-/*END Testing Counter*/
-
-@media screen and (min-width:700px){
-    :root{
-        --header-size: 5vw;
-        --card-size: 20vw;
-        --card-rows: 2;
+    #settings-open:hover{
+        cursor: pointer;
+        animation-name: gear;
+        animation-duration: 0.5s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        transform: rotate(60deg);
     }
-}
 
-@media screen and (min-width:1000px){
-    :root{
-        --header-size: 3vw;
-        --card-size: 10vw;
-        --card-rows: 1;
-    }
-}
-
-@media screen and (max-width:193px){
-    :root{
-        --card-rows: 5;
-    }
-}
+/*END Modal Code*/
