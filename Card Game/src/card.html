@@ -13,7 +13,12 @@
             <!--Straight up PLAYING CARDS ascii 127136 - 127221-->
             <h1 class="header-content">Testing Cards</h1>
             <menu class="header-content header-menu">
-                <li><button class="menu-settings">&#9881</button></li>
+                <!--Idea: Create Modal for a settings prompt for changing things such as color of cards, number of decks to use for drawing, number of cards drawn, back of card art, etc-->
+                <!--New function added in 2022 for ease of creating modals-->
+                <dialog id="settings-dialog">
+                    <button id="settings-close" autofocus>X</button>
+                </dialog>
+                <li><button id="settings-open">&#9881</button></li>
             </menu>
         </header>
         <main>
@@ -45,7 +50,6 @@
                 <p class="card">&#127137</p>
                 <p class="card card-red card-overlap">&#127163</p>
             </div>
-            <!--Idea: Create Modal for a settings prompt for changing things such as color of cards, number of decks to use for drawing, number of cards drawn, back of card art, etc-->
         </main>
         <footer>
             <!--Load JS here-->

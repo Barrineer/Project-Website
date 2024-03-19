@@ -27,7 +27,7 @@
     justify-content: space-between;
 }
 
-h1.header-content,button.menu-settings{
+h1.header-content,button#settings-open{
     font-size: var(--header-size);
 }
 
@@ -54,7 +54,7 @@ h1.header-content,button.menu-settings{
     margin-right: 1vw;
 }
 
-.menu-settings{
+#settings-open{
     padding: 0px;
     border: 0px;
     background-color: white;
@@ -99,7 +99,8 @@ h1.header-content,button.menu-settings{
     cursor:grab;
 }
 
-.menu-settings:hover{
+#settings-open:hover{
+    cursor: pointer;
     animation-name: gear;
     animation-duration: 0.5s;
     animation-direction: alternate;
@@ -119,8 +120,17 @@ h1.header-content,button.menu-settings{
 
 /*Modal Code*/
 
-    .modal{
+    ::backdrop{
+        background-color: rgba(0,0,0,0.75);
+    }
 
+    #settings-dialog{
+        width: 75vw;
+        height: 75vh;
+    }
+
+    #settings-close{
+        font-size: 7.5vw;
     }
 
 /*END Modal Code*/
@@ -128,7 +138,7 @@ h1.header-content,button.menu-settings{
 /*Overlap Card*/
 
     /*Figure out a way to have each subsequent cards' z-index go up by 1*/
-    /*Use the counter functionality*/
+    /*Use the counter functionality Update: Counter will not work.*/
     .sleeve-overlap{
 
     }

@@ -129,4 +129,18 @@ window.onload = () => {
         console.log("New deck created!");
     }
 
+    //Modal Functionality
+
+    var settings_dialog = document.getElementById("settings-dialog");
+    var settings_open = document.getElementById("settings-open");
+    var settings_close = document.getElementById("settings-close");
+
+    settings_open.onclick = () =>{
+        settings_dialog.showModal();
+    }
+
+    settings_close.onclick = () =>{
+        settings_dialog.close();
+    }
+
 }
