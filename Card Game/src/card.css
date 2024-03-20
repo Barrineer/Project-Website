@@ -130,7 +130,7 @@
 
 /*END Card Styling*/
 
-/*Modal Code*/
+/*Dialog Style*/
 
     ::backdrop{
         background-color: rgba(0,0,0,0.75);
@@ -139,10 +139,12 @@
     #settings-dialog{
         width: var(--modal-container-width);
         height: var(--modal-container-height);
+        padding: 0px;
     }
 
     #settings-close{
         font-size: var(--modal-close-size);
+        align-self: flex-start;
     }
 
     #settings-open{
@@ -165,4 +167,35 @@
         transform: rotate(60deg);
     }
 
-/*END Modal Code*/
+    [class^="settings-style"]{
+        display: flex;
+    }
+
+    [class^="settings-style"]{
+        flex-direction: column;
+    }
+
+    .settings-header > h1 {
+        margin:0px;
+        text-align: center;
+        flex-grow: 10;
+        padding: 10px 0px;
+    }
+
+    .settings-header{
+        background-color: #aaaaaa;
+        display: flex;
+    }
+
+    .settings-main{
+        background-color: #7777ff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .settings-footer{
+        background-color: #000000;
+        display: flex;
+    }
+
+/*END Dialog Style*/

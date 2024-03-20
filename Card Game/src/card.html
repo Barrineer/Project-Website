@@ -16,7 +16,53 @@
                 <!--Idea: Create Modal for a settings prompt for changing things such as color of cards, number of decks to use for drawing, number of cards drawn, back of card art, etc-->
                 <!--New function added in 2022 for ease of creating modals-->
                 <dialog id="settings-dialog">
-                    <button id="settings-close" autofocus>X</button>
+                    <div class="settings-header">
+                        <button id="settings-close" autofocus>X</button>
+                        <h1>Card Settings</h1>
+                    </div>
+                    <form class="settings-main">
+                        <section class="settings-style">
+                            <h2>Style</h2>
+                            <div class="settings-style-suite">
+                                <h3>Suite Color</h3>
+                                <div>
+                                    <label>Spades/Clubs</label>
+                                    <input type="color" value="#000000">
+                                </div>
+                                <div>
+                                    <label>Diamond/Hearts</label>
+                                    <input type="color" value="#ff0000">
+                                </div>
+                            </div>
+                            <div class="settings-style-back">
+                                <h3>Background</h3>
+                                <div>
+                                    <label>Background Style</label>
+                                    <input type="radio">
+                                </div>
+                                <div>
+                                    <label>Background Color</label>
+                                    <input type="color">
+                                </div>
+                            </div>
+                            <div class="settings-style-text">
+                                <h3>Font</h3>
+                                <div>
+                                    <label>Color</label>
+                                    <input type="color">
+                                </div>
+                                <div>
+                                    <label>Scale</label>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <h2>Logic</h2>
+                        </section>
+                    </form>
+                    <div class="settings-footer">
+
+                    </div>
                 </dialog>
                 <li><button id="settings-open">&#9881</button></li>
             </menu>
@@ -25,7 +71,7 @@
             <div class="medium-container">
                 <h4 class="header-medium">Hand</h4>
                 <!--
-                    Slight bug (probably HTML issue dunno if can fix) the click box for each card is slighly larger on the top and bottom.
+                    Slight bug (probably HTML issue dunno if can fix) the click box for each card is slightly larger on the top and bottom.
                     Fixed how large it was by reducing the line-height property in css but there is still a slight amount.
                 -->
                 <button id="draw-multiple" class="card-btn">Draw 7</button>
